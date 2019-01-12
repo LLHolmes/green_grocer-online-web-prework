@@ -43,13 +43,13 @@ def checkout(cart, coupons)
   total = 0
 #  puts coupons
 #  puts cart
-  consolidate_cart(cart)
+  cart_hash = consolidate_cart(cart)
 #  puts cart
-  apply_coupons(cart, coupons)
+  apply_coupons(cart_hash, coupons)
 #  puts cart
-  apply_clearance(cart)
+  apply_clearance(cart_hash)
 #  puts cart
-  cart.each do |food, data|
+  cart_hash.each do |food, data|
     total = total + (data[:price] * data[:count])
   end
 #  puts total
