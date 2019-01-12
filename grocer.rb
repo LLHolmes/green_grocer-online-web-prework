@@ -41,19 +41,19 @@ end
 
 def checkout(cart, coupons)
   total = 0
-  puts coupons
-  puts cart
+#  puts coupons
+#  puts cart
   consolidate_cart(cart)
-  puts cart
+#  puts cart
   apply_coupons(cart, coupons)
-  puts cart
+#  puts cart
   apply_clearance(cart)
-  puts cart
+#  puts cart
   cart.each do |food, data|
     total = total + (data[:price] * data[:count])
   end
-  puts total
-  puts cart
+#  puts total
+#  puts cart
   if total > 100
     total = (total * 0.9).round(1)
   end
