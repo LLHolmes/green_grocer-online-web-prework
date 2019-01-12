@@ -48,12 +48,9 @@ def checkout(cart, coupons)
   apply_coupons(cart_hash, coupons)
 #  puts cart
   apply_clearance(cart_hash)
-#  puts cart
   cart_hash.each do |food, data|
     total = total + (data[:price] * data[:count])
   end
-#  puts total
-#  puts cart
   if total > 100
     total = (total * 0.9).round(1)
   end
